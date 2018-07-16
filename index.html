@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="barter.css">
+	<title>Barter</title>
+</head>
+<body>
+    <main>
+        <section id="login">
+            <div id="registeration-link">
+                <span><a href="#">Register</a></span>
+            </div>
+            <div id="login-link">
+                <span><a href="#">Login</a></span>
+            </div>
+            <p>Barter makes online payments safe and easy, with a new virtual card for each place you pay online.</p>
+
+            <div class="hidden" id="registeration-form">
+                <form action="#">
+                    <input class="form input" type="text" name="firstName" placeholder="First Name">
+                    <input class="form input" type="text" name="lastName" placeholder="Last Name">
+                    <input class="form input" type="email" name="email" placeholder="Email address">
+                    <input class="form input" type="password" name="password" placeholder="Password">
+                    <select class="select-country" name="country" id="country" placeholder="country"></select>
+
+                    <div>
+                        <div>
+                            <select class="select-country" name="number-prefix" id="number-prefix"></select>
+                        </div>
+                        <input type="number" name="number" class="form input" id="number-suffix" placeholder="8102650435">
+                    </div>
+
+                    <button type="submit" class="btn">Register Account
+                        <img src="http://res.cloudinary.com/justiceotuya/image/upload/v1531754408/long-arrow.svg" alt="long-arrow"> 
+                    </button>
+                </form>
+            </div>
+
+            <div class="show" id="login-form">
+                <form action="#" method="post">
+                    <input class="form input" type="text" name="email" id="email" placeholder="Email address">
+                    <input class="form input" type="password" name="password" id="password" placeholder="Password">
+                    <a href="#">
+                        <button type="submit" class="btn">
+                        Log into account
+                        	<img src="http://res.cloudinary.com/justiceotuya/image/upload/v1531754408/long-arrow.svg" alt="long-arrow">
+                    	</button>
+                    </a>
+                </form>
+            </div>
+        </section>
+
+        <section id="socialMedia">
+            <p>
+                You can sign in using your accounts on these sites:
+            </p>
+            <a href="#">
+                <button type="submit" class="btn" id="f-book-btn">
+                    facebook
+                    <img src="http://res.cloudinary.com/justiceotuya/image/upload/v1531754408/long-arrow.svg" alt="long-arrow"> </button>
+            </a>
+
+            <a href="#">
+                <button type="submit" class="btn" id="google-btn">Google
+                	<img src="http://res.cloudinary.com/justiceotuya/image/upload/v1531754408/long-arrow.svg" alt="long-arrow">
+                </button>
+            </a>
+        </section>
+    </main>
+    <script>
+    	
+    </script>
+</body>
+</html>
