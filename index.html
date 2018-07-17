@@ -3,13 +3,19 @@
 <head>
 	<meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="barter.css">
 	<title>Barter</title>
+	<script type="text/javascript">
+		
+	</script>
 </head>
 <body>
     <main>
+    	<header class="logo">
+    		<img src="https://res.cloudinary.com/ayowoleadenuga/image/upload/v1531782592/barter.png" alt="logo">
+    	</header>
         <section id="login">
-            <div id="registeration-link">
+            <div id="registration-link">
                 <span><a href="#">Register</a></span>
             </div>
             <div id="login-link">
@@ -17,7 +23,7 @@
             </div>
             <p>Barter makes online payments safe and easy, with a new virtual card for each place you pay online.</p>
 
-            <div class="hidden" id="registeration-form">
+            <div class="hidden" id="registration-form">
                 <form action="#">
                     <input class="form input" type="text" name="firstName" placeholder="First Name">
                     <input class="form input" type="text" name="lastName" placeholder="Last Name">
@@ -33,7 +39,7 @@
                     </div>
 
                     <button type="submit" class="btn">Register Account
-                        <img src="http://res.cloudinary.com/justiceotuya/image/upload/v1531754408/long-arrow.svg" alt="long-arrow"> 
+                        <img src="http://res.cloudinary.com/justiceotuya/image/upload/v1531754408/long-arrow.svg" class="arrow" alt="long-arrow"> 
                     </button>
                 </form>
             </div>
@@ -42,10 +48,12 @@
                 <form action="#" method="post">
                     <input class="form input" type="text" name="email" id="email" placeholder="Email address">
                     <input class="form input" type="password" name="password" id="password" placeholder="Password">
+                    <span id="forgotP"><a href="#">Forgot Password?</a></span>
+                    <br><br>
                     <a href="#">
-                        <button type="submit" class="btn">
+                        <button type="submit" id="logbtn" 	class="btn">
                         Log into account
-                        	<img src="http://res.cloudinary.com/justiceotuya/image/upload/v1531754408/long-arrow.svg" alt="long-arrow">
+                        	<img src="http://res.cloudinary.com/justiceotuya/image/upload/v1531754408/long-arrow.svg" class="arrow" alt="long-arrow">
                     	</button>
                     </a>
                 </form>
@@ -59,18 +67,79 @@
             <a href="#">
                 <button type="submit" class="btn" id="f-book-btn">
                     facebook
-                    <img src="http://res.cloudinary.com/justiceotuya/image/upload/v1531754408/long-arrow.svg" alt="long-arrow"> </button>
+                    <img src="https://res.cloudinary.com/ayowoleadenuga/image/upload/v1531782567/long-arrow.svg" class="arrow" alt="long-arrow"> </button>
             </a>
 
             <a href="#">
                 <button type="submit" class="btn" id="google-btn">Google
-                	<img src="http://res.cloudinary.com/justiceotuya/image/upload/v1531754408/long-arrow.svg" alt="long-arrow">
+                	<img src="https://res.cloudinary.com/ayowoleadenuga/image/upload/v1531782567/long-arrow.svg" class="arrow" alt="long-arrow">
                 </button>
             </a>
         </section>
     </main>
     <script>
+    	//setting all variables
+    	var loginLink = $('#login-link');
+    	var login = $('#login-form')
+    	var registrationLink = $('#registration-link');
+    	var register = $('#registration-form');
+    	var number = $('#number-prefix');
+    	var nations = $('#country');
+
+		//to toggle between login and register
+    	loginLink.on('click', function () {
+  			if (login.hasClass('hidden')) {
+    			clickLoginShow();
+  			} else {
+    			clickLoginShow();
+  			}
+		});
+
+    	function clickLoginShow() {
+    		login.removeClass('hidden')
+    		login.addClass('show');
+    		register.addClass('hidden');
+    		loginLink.attr('style', 'border-bottom: 1px solid #3c52dd');
+    		registrationLink.attr('style', 'border-bottom: 1px solid rgba(0, 0, 0, 0.1)');
+    	}
+    	function clickRegisterShow() {
+    		register.removeClass('hidden')
+    		register.addClass('show');
+    		login.addClass('hidden');
+    		registrationLink.attr('style', 'border-bottom: 1px solid #3c52dd');
+    		loginLink.attr('style', 'border-bottom: 1px solid rgba(0, 0, 0, 0.1)');
+    	}
     	
+
+		registrationLink.on('click', function () {
+  			if (register.hasClass('show')) {
+    			clickRegisterShow();
+  			} else {
+    			clickRegisterShow();
+  			}
+		});
+		
+		//to fetch the countries in the select-country space
+		/*	fetch(
+	    "https://gist.githubusercontent.com/DmytroLisitsyn/1c31186e5b66f1d6c52da6b5c70b12ad/raw/b08535cdbb5069583f7438cb878a81bf138ebd2b/country_dial_info.json"
+	  )
+	  .then(function (response) {
+	    return response.json();
+	  })
+	  .then(function (myJson) {
+	    myJson.forEach(function (data) {
+	      nations.options[nations.options.length] = new Option(
+	        data.name, data.name
+	      );
+
+	      // country.push("<option value='" + data.name + "'>");
+
+	      number.options[number.options.length] = new Option(
+	        data.flag + data.dial_code,
+	        data.name
+	      );
+	    });
+	  }); */
     </script>
 </body>
 </html>
