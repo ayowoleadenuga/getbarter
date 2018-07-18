@@ -39,6 +39,12 @@ header {
     width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
+.form-input {
+    border: transparent;
+    outline-color: transparent;
+    width: 80%;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
 
 .input: focus {
     border-bottom: 1px solid #3c52dd;
@@ -128,7 +134,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 input #number-suffix {
-    padding-left: 80px;
+    padding-left: 80px !important;
 }
 
 #main-number {
@@ -154,6 +160,9 @@ input #number-suffix {
     text-decoration: none !important;
     cursor: pointer;
     border: none;
+}
+.btn:hover {
+   transform: scale(1.1); 
 }
 
 #f-book-btn {
