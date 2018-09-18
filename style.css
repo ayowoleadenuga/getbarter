@@ -161,10 +161,11 @@ input #number-suffix {
     cursor: pointer;
     border: none;
     transition: all;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ease;
 }
 .btn:hover {
    transform: scale(1.1); 
+   animation-timing-function: ease;
 }
 
 #f-book-btn {
